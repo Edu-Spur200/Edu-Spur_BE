@@ -71,8 +71,10 @@ app.listen(PORT, () => {
   console.log("EduSpur School Connection API initialized");
 });
 
-app.get("/" , () => {
-  console.log("Server up")
-})
+app.get("/", (req, res) => {
+  console.log("Server up");
+  res.send("Server is running");
+});
+
 
 export default app;

@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import { ITeacher } from "../types/index";
 
 const teacherSchema = new Schema<ITeacher>({
-  fullName: {
+  name: {
     type: String,
     required: true,
   },
@@ -15,15 +15,15 @@ const teacherSchema = new Schema<ITeacher>({
     type: String,
     required: true,
   },
-  specialization: {
+  subjects: {
     type: [String],
     required: true,
   },
-  qualifications: {
+  qualification: {
     type: String,
     required: true,
   },
-  experienceLevel: {
+  experience: {
     type: String,
     required: true,
   },
@@ -31,7 +31,7 @@ const teacherSchema = new Schema<ITeacher>({
     type: String,
     required: true,
   },
-  reasonToJoin: {
+  password: {
     type: String,
     required: true,
   },

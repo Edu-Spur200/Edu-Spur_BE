@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const teacherSchema = new mongoose_1.Schema({
-    fullName: {
+    name: {
         type: String,
         required: true,
     },
@@ -38,15 +38,15 @@ const teacherSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
-    specialization: {
+    subjects: {
         type: [String],
         required: true,
     },
-    qualifications: {
+    qualification: {
         type: String,
         required: true,
     },
-    experienceLevel: {
+    experience: {
         type: String,
         required: true,
     },
@@ -54,7 +54,7 @@ const teacherSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
-    reasonToJoin: {
+    password: {
         type: String,
         required: true,
     },

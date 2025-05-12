@@ -39,7 +39,7 @@ const schoolSchema = new Schema<ISchool>({
   },
   preferredSubjects: {
     type: [String],
-    required: true,
+    required: true  ,
   },
   additionalComments: {
     type: String,

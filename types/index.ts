@@ -31,14 +31,14 @@ export interface IParent extends Document {
 
 // Teacher interface
 export interface ITeacher extends Document {
-  fullName: string;
+  name: string;
   email: string;
   phoneNumber: string;
-  specialization: string[];
-  qualifications: string;
-  experienceLevel: string;
+  subjects: string[];
+  qualification: string;
+  experience: string;
   location: string;
-  reasonToJoin: string;
+  password: string;
   createdAt: Date;
 }
 

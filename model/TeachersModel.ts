@@ -19,7 +19,7 @@ const teacherSchema = new Schema<ITeacher>({
     type: [String],
     required: true,
   },
-  qualifications: {
+  qualification: {
     type: String,
     required: true,
   },

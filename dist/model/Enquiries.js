@@ -32,17 +32,31 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const schoolController = __importStar(require("../controller/schoolController"));
-const router = express_1.default.Router();
-// Get all schools
-router.get("/", schoolController.getAllSchools);
-// Create a new school
-router.post("/", schoolController.createSchool);
-// Get a specific school by ID
-router.get("/:id", schoolController.getSchoolById);
-exports.default = router;
+const mongoose_1 = __importStar(require("mongoose"));
+const enquiriesSchema = new mongoose_1.Schema({
+    firstName: {
+        type: String,
+        required: true,
+    },
+    lastName: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    role: {
+        type: String,
+        enum: ["School Administrator", "Parent", "Student", "Educator"],
+        required: true,
+    },
+    message: {
+        type: String,
+        required: true,
+    },
+});
+const Enquiries = mongoose_1.default.model("Enquiries", enquiriesSchema);
+exports.default = Enquiries;

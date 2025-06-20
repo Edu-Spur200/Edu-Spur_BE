@@ -37,12 +37,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const schoolController = __importStar(require("../controller/schoolController"));
+const enquiriesController = __importStar(require("../controller/enquiriesController"));
 const router = express_1.default.Router();
-// Get all schools
-router.get("/", schoolController.getAllSchools);
-// Create a new school
-router.post("/", schoolController.createSchool);
-// Get a specific school by ID
-router.get("/:id", schoolController.getSchoolById);
+// Get all teachers
+router.get("/get-all-enquiries", enquiriesController.getAllEnquiries);
+// Create a new teacher
+router.post("/createEnquiry", enquiriesController.createEnquiry);
+// Get a specific teacher by ID
+router.get("/get-enquiry-by-id/:id", enquiriesController.getEnquiryById);
 exports.default = router;

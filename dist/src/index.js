@@ -14,6 +14,7 @@ const index_1 = __importDefault(require("../routes/index"));
 const schoolRoutes_1 = __importDefault(require("../routes/schoolRoutes"));
 const parentRoutes_1 = __importDefault(require("../routes/parentRoutes"));
 const teacherRoutes_1 = __importDefault(require("../routes/teacherRoutes"));
+const enquiriesRoutes_1 = __importDefault(require("../routes/enquiriesRoutes"));
 // Load environment variables
 dotenv_1.default.config();
 // Environment variables
@@ -33,7 +34,9 @@ const app = (0, express_1.default)();
 // Middleware
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: 'http://localhost:5173'
+}));
 app.use((0, helmet_1.default)());
 app.use((0, morgan_1.default)("dev"));
 // Routes
@@ -41,6 +44,7 @@ app.use("/api", index_1.default);
 app.use("/api/schools", schoolRoutes_1.default);
 app.use("/api/parents", parentRoutes_1.default);
 app.use("/api/teachers", teacherRoutes_1.default);
+app.use("/api/enquiries", enquiriesRoutes_1.default);
 // 404 handler
 app.use((req, res) => {
     res.status(404).json({ message: "Route not found" });
@@ -58,5 +62,9 @@ app.use((err, req, res, _next) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
     console.log("EduSpur School Connection API initialized");
+});
+app.get("/", (req, res) => {
+    console.log("Server up");
+    res.send("Server is running");
 });
 exports.default = app;

@@ -34,7 +34,7 @@ const schoolSchema = new Schema<ISchool>({
   },
   teachersNeeded: {
     type: String,
-    // enum: ["Regular Subject Teachers", "Tech Teachers", "Both"],
+    enum: ["Regular Subject Teachers", "Tech Teachers", "Both"],
     required: true,
   },
   preferredSubjects: {
@@ -48,7 +48,7 @@ const schoolSchema = new Schema<ISchool>({
     type: Date,
     default: Date.now,
   },
-});
+})
 
 const School = mongoose.model<ISchool>("School", schoolSchema);
 

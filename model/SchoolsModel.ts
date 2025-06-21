@@ -48,8 +48,7 @@ const schoolSchema = new Schema<ISchool>({
     type: Date,
     default: Date.now,
   },
-});
 
-const School = mongoose.model<ISchool>("School", schoolSchema);
+})
 
-export default School;
+

@@ -15,30 +15,31 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const schoolSchema = new mongoose_1.Schema({
-    schoolName: {
+const enquiriesSchema = new mongoose_1.Schema({
+    firstName: {
         type: String,
         required: true,
     },
-    schoolType: {
-        type: String,
-        enum: ["Primary", "Secondary", "Both"],
-        required: true,
-    },
-    contactPersonName: {
-        type: String,
-        required: true,
-    },
-    contactPersonRole: {
+    lastName: {
         type: String,
         required: true,
     },
@@ -47,30 +48,15 @@ const schoolSchema = new mongoose_1.Schema({
         required: true,
         unique: true,
     },
-    phoneNumber: {
+    role: {
         type: String,
+        enum: ["School Administrator", "Parent", "Student", "Educator"],
         required: true,
     },
-    location: {
+    message: {
         type: String,
         required: true,
-    },
-    teachersNeeded: {
-        type: String,
-        enum: ["Regular Subject Teachers", "Tech Teachers", "Both"],
-        required: true,
-    },
-    preferredSubjects: {
-        type: [String],
-        required: true,
-    },
-    additionalComments: {
-        type: String,
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
     },
 });
-const School = mongoose_1.default.model("School", schoolSchema);
-exports.default = School;
+const Enquiries = mongoose_1.default.model("Enquiries", enquiriesSchema);
+exports.default = Enquiries;

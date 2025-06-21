@@ -10,6 +10,7 @@ import indexRoutes from "../routes/index";
 import schoolRoutes from "../routes/schoolRoutes";
 import parentRoutes from "../routes/parentRoutes";
 import teacherRoutes from "../routes/teacherRoutes";
+import enquiriesRoutes from "../routes/enquiriesRoutes";
 
 // Load environment variables
 dotenv.config();
@@ -40,7 +41,9 @@ const app: Express = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 app.use(helmet());
 app.use(morgan("dev"));
 
@@ -49,6 +52,7 @@ app.use("/api", indexRoutes);
 app.use("/api/schools", schoolRoutes);
 app.use("/api/parents", parentRoutes);
 app.use("/api/teachers", teacherRoutes);
+app.use("/api/enquiries", enquiriesRoutes);
 
 // 404 handler
 app.use((req: Request, res: Response) => {

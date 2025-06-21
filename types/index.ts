@@ -9,11 +9,11 @@ export interface ISchool extends Document {
   email: string;
   phoneNumber: string;
   location: string;
-  teachersNeeded: "Regular Subject Teachers" | "Tech Teachers" | "Both";
+  teachersNeeded: string;
   preferredSubjects: string[];
   additionalComments?: string;
   createdAt: Date;
-}
+};
 
 // Parent interface
 export interface IParent extends Document {
@@ -40,6 +40,15 @@ export interface ITeacher extends Document {
   location: string;
   password: string;
   createdAt: Date;
+}
+
+
+export interface IEnquiries extends Document{
+  firstName : string
+  lastName : string
+  email : string
+  role : "School Administrator" | "Parent" | "Student" | "Educator";
+  message : string
 }
 
 // Error interface

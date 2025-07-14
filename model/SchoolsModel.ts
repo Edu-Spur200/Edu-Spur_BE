@@ -37,6 +37,11 @@ const schoolSchema = new Schema<ISchool>({
     // enum: ["Regular Subject Teachers", "Tech Teachers", "Both"],
     required: true,
   },
+  subjectClassCombinations: {
+    type: String,
+    // enum: ["Regular Subject Teachers", "Tech Teachers", "Both"],
+    required: true,
+  },
   preferredSubjects: {
     type: [String],
     required: true  ,

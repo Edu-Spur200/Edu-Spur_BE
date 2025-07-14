@@ -10,6 +10,7 @@ export interface ISchool extends Document {
   phoneNumber: string;
   location: string;
   teachersNeeded: string;
+  subjectClassCombinations: string;
   preferredSubjects: string[];
   additionalComments?: string;
   createdAt: Date;

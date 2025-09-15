@@ -24,15 +24,21 @@ const schoolSchema = new Schema<ISchool>({
     required: true,
     unique: true,
   },
+  isVerified: { type: Boolean, default: false },
   phoneNumber: {
     type: String,
+    
     required: true,
   },
   location: {
     type: String,
-    required: true,
   },
   teachersNeeded: {
+    type: String,
+    // enum: ["Regular Subject Teachers", "Tech Teachers", "Both"],
+    required: true,
+  },
+  subjectClassCombinations: {
     type: String,
     // enum: ["Regular Subject Teachers", "Tech Teachers", "Both"],
     required: true,

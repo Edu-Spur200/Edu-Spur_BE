@@ -7,9 +7,11 @@ export interface ISchool extends Document {
   contactPersonName: string;
   contactPersonRole: string;
   email: string;
+  isVerified: boolean
   phoneNumber: string;
   location: string;
   teachersNeeded: string;
+  subjectClassCombinations: string;
   preferredSubjects: string[];
   additionalComments?: string;
   createdAt: Date;
@@ -19,6 +21,8 @@ export interface ISchool extends Document {
 export interface IParent extends Document {
   name: string;
   email: string;
+  password: string;
+  isVerified: boolean
   phoneNumber: string;
   childGradeLevel: string;
   subjectsNeeded: string[];
@@ -33,6 +37,7 @@ export interface IParent extends Document {
 export interface ITeacher extends Document {
   name: string;
   email: string;
+  isVerified: boolean
   phoneNumber: string;
   subjects: string[];
   qualification: string;
@@ -43,12 +48,12 @@ export interface ITeacher extends Document {
 }
 
 
-export interface IEnquiries extends Document{
-  firstName : string
-  lastName : string
-  email : string
-  role : "School Administrator" | "Parent" | "Student" | "Educator";
-  message : string
+export interface IEnquiries extends Document {
+  firstName: string
+  lastName: string
+  email: string
+  role: "School Administrator" | "Parent" | "Student" | "Educator";
+  message: string
 }
 
 // Error interface

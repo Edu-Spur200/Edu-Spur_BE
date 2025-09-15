@@ -11,6 +11,7 @@ const teacherSchema = new Schema<ITeacher>({
     required: true,
     unique: true,
   },
+  isVerified: { type: Boolean, default: false },
   phoneNumber: {
     type: String,
     required: true,

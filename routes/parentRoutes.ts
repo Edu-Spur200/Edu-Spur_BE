@@ -9,6 +9,8 @@ router.get("/", parentController.getAllParents);
 // Create a new parent
 router.post("/", parentController.createParent);
 
+router.get("/verify", parentController.verifyParentEmail);
+
 // Get a specific parent by ID
 router.get("/:id", parentController.getParentById);
 

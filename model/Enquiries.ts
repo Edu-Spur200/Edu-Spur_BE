@@ -13,11 +13,10 @@ const enquiriesSchema = new Schema<IEnquiries>({
   email: {
     type: String,
     required: true,
-    unique: true,
   },
   role: {
     type: String,
-    enum: ["School Administrator" , "Parent" , "Student" , "Educator"],
+    enum: ["School Administrator" , "Parent" , "Student" , "Educator" , "Other"],
     required: true,
   },
   message: {

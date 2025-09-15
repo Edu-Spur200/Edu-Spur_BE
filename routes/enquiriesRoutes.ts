@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/get-all-enquiries", enquiriesController.getAllEnquiries);
 
 // Create a new teacher
-router.post("/createEnquiry", enquiriesController.createEnquiry);
+router.post("/", enquiriesController.createEnquiry);
 
 // Get a specific teacher by ID
 router.get("/get-enquiry-by-id/:id", enquiriesController.getEnquiryById);

@@ -9,27 +9,27 @@ const parentSchema = new Schema<IParent>({
   email: {
     type: String,
     required: true,
-    unique: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
+  isVerified: { type: Boolean, default: false },
   phoneNumber: {
     type: String,
     required: true,
   },
   childGradeLevel: {
     type: String,
-    required: true,
   },
   subjectsNeeded: {
     type: [String],
-    required: true,
   },
   classToTeach: {
     type: String,
-    required: true,
   },
   preferredTeachingTimes: {
     type: String,
-    required: true,
   },
   location: {
     type: String,

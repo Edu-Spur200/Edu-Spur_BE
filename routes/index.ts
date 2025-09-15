@@ -9,6 +9,7 @@ router.get("/", (req: Request, res: Response) => {
       schools: "/api/schools",
       parents: "/api/parents",
       teachers: "/api/teachers",
+      enquiries: "/api/enquiries",
     },
   });
 });

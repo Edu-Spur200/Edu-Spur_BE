@@ -42,7 +42,7 @@ const router = express_1.default.Router();
 // Get all teachers
 router.get("/get-all-enquiries", enquiriesController.getAllEnquiries);
 // Create a new teacher
-router.post("/createEnquiry", enquiriesController.createEnquiry);
+router.post("/", enquiriesController.createEnquiry);
 // Get a specific teacher by ID
 router.get("/get-enquiry-by-id/:id", enquiriesController.getEnquiryById);
 exports.default = router;

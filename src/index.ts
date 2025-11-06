@@ -17,7 +17,7 @@ dotenv.config();
 
 // Environment variables
 const MONGODB_URI =
-  "mongodb+srv://eduspursolutions:NVPLrh82KrlUK4aw@edu-spur-mongodb-cluste.brxslir.mongodb.net/?retryWrites=true&w=majority&appName=Edu-Spur-mongodb-cluster";
+  "mongodb+srv://eduspursolutions:NVPLrh82KrlUK4aw@edu-spur-mongodb-cluster.brxslir.mongodb.net/?retryWrites=true&w=majority&appName=Edu-Spur-mongodb-cluster";
 const PORT = process.env.PORT || 3000;
 
 // Error interface
@@ -50,7 +50,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173' , 'https://edu-spur.netlify.app/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type'  , 'Authorization'],
   credentials: true,

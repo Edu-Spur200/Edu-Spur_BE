@@ -3,6 +3,8 @@ import * as schoolController from "../controller/schoolController";
 
 const router = express.Router();
 
+router.get("/verify", schoolController.verifySchoolEmail);
+
 // Get all schools
 router.get("/", schoolController.getAllSchools);
 

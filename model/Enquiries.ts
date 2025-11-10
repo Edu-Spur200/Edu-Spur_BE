@@ -10,7 +10,7 @@ const enquiriesSchema = new Schema<IEnquiries>({
     type: String,
     required: true,
   },
-  email: {
+  phoneNumber: {
     type: String,
     required: true,
   },

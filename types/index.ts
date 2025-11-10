@@ -51,7 +51,7 @@ export interface ITeacher extends Document {
 export interface IEnquiries extends Document {
   firstName: string
   lastName: string
-  email: string
+  phoneNumber: string
   role: "School Administrator" | "Parent" | "Student" | "Educator";
   message: string
 }
